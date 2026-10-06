@@ -486,7 +486,7 @@ return tryFetch();
 }
 
 function createVideoTask(imageDataUri,prompt){
-var body={model:MODEL_VIDEO,prompt:prompt+' Output must be in 9:16 vertical portrait format, 720x1280.',image:imageDataUri,num_frames:state.durationFrames,frame_rate:FRAME_RATE};
+var body={model:MODEL_VIDEO,prompt:prompt,image:imageDataUri,num_frames:state.durationFrames,frame_rate:FRAME_RATE,width:720,height:1280,aspect_ratio:'9:16',resolution:'720x1280',size:'720x1280'};
 return apiFetch(API_BASE+'/videos',{
 method:'POST',
 headers:{'Authorization':'Bearer '+getApiKey(),'Content-Type':'application/json'},
